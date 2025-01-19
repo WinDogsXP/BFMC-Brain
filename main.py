@@ -78,6 +78,8 @@ Camera = True
 Semaphores = True
 TrafficCommunication = False
 SerialHandler = True
+LaneKeeping = True
+
 
 # ------ New component flags starts here ------#
  
