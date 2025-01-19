@@ -19,7 +19,7 @@ class threadLaneKeeping(ThreadWithStop):
         self.debugger = debugger
 
         
-        self.cameraSubscriber = messageHandlerSubscriber(self.queuesList, mainCamera, mode="all", block=False)
+        self.cameraSubscriber = messageHandlerSubscriber(self.queuesList, mainCamera, "lastOnly", False)
 
         # self.cameraSubscriber = messageHandlerSubscriber(self.queuesList, serialCamera, mode="all", block=False)
 
