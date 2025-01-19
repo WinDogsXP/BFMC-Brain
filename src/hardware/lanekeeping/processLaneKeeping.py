@@ -3,7 +3,7 @@ if __name__ == "__main__":
     sys.path.insert(0, "../../..")
 
 from src.templates.workerprocess import WorkerProcess
-from src.lanekeeping.threads.threadLaneKeeping import threadLaneKeeping
+from src.hardware.lanekeeping.threads.threadLaneKeeping import threadLaneKeeping
 
 class processLaneKeeping(WorkerProcess):
     """
