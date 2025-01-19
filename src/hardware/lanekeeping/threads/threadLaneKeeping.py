@@ -1,9 +1,9 @@
 import cv2
 import base64
 import numpy as np
-
+from PIL import Image
 from src.templates.threadwithstop import ThreadWithStop
-from src.utils.messages.allMessages import mainCamera, serialCamera, SteerMotor, SpeedMotor
+from src.utils.messages.allMessages import mainCamera, serialCamera, SteerMotor, SpeedMotor, Klem
 from src.utils.messages.messageHandlerSubscriber import messageHandlerSubscriber
 from src.utils.messages.messageHandlerSender import messageHandlerSender
 
@@ -20,7 +20,8 @@ class threadLaneKeeping(ThreadWithStop):
 
         
         self.cameraSubscriber = messageHandlerSubscriber(self.queuesList, mainCamera, "lastOnly", False)
-
+        self.kl = messageHandlerSender(self.queuesList, Klem)
+        kl.send(30)
         # self.cameraSubscriber = messageHandlerSubscriber(self.queuesList, serialCamera, mode="all", block=False)
 
         self.steerSender = messageHandlerSender(self.queuesList, SteerMotor)
@@ -37,7 +38,10 @@ class threadLaneKeeping(ThreadWithStop):
                 continue  
 
             frame_data = base64.b64decode(frame_b64)
-            frame_data.to_png("test.png")
+            
+            
+            im = Image.fromarray(arr)
+            im.save("your_file.jpeg")
             np_arr = np.frombuffer(frame_data, np.uint8)
             frame = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
             if frame is None:
