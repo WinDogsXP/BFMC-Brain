@@ -125,7 +125,7 @@ if SerialHandler:
 
 # Initializing LaneKeeping
 if LaneKeeping:
-    processLaneKeeping = processLaneKeeping(queueList, logger, debugging=True)
+    processLaneKeeping = processLaneKeeping(queueList, logging, debugging=True)
     allProcesses.append(processLaneKeeping)
 
 # ------ New component runs starts here ------#
