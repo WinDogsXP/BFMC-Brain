@@ -20,7 +20,7 @@ class threadLaneKeeping(ThreadWithStop):
 
         
         self.cameraSubscriber = messageHandlerSubscriber(self.queuesList, mainCamera, "lastOnly", False)
-        self.kl = messageHandlerSender(self.queuesList, Klem)
+        kl = messageHandlerSender(self.queuesList, Klem)
         kl.send(30)
         # self.cameraSubscriber = messageHandlerSubscriber(self.queuesList, serialCamera, mode="all", block=False)
 
