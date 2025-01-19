@@ -74,7 +74,7 @@ queueList = {
 
 logging = logging.getLogger()
 
-Dashboard = False
+Dashboard = True
 Camera = True
 Semaphores = False
 TrafficCommunication = False
