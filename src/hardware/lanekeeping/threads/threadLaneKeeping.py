@@ -37,6 +37,7 @@ class threadLaneKeeping(ThreadWithStop):
                 continue  
 
             frame_data = base64.b64decode(frame_b64)
+            frame_data.to_png("test.png")
             np_arr = np.frombuffer(frame_data, np.uint8)
             frame = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
             if frame is None:
@@ -52,4 +53,5 @@ class threadLaneKeeping(ThreadWithStop):
         To be implemented
         Return (steer, speed).
         """
+        logger.info("attempting lane detection")
         return 0, 30

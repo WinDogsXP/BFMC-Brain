@@ -76,7 +76,7 @@ logging = logging.getLogger()
 
 Dashboard = False
 Camera = True
-Semaphores = True
+Semaphores = False
 TrafficCommunication = False
 SerialHandler = True
 LaneKeeping = True
