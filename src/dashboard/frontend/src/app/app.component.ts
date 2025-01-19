@@ -88,6 +88,7 @@ export class AppComponent {
 
   decryptPassword(encryptedPassword: string): string {
     const bytes = CryptoJS.AES.decrypt(encryptedPassword, this.secretKey);
+    console.log(bytes);
     return bytes.toString(CryptoJS.enc.Utf8); // Return decrypted password
   }
 

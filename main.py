@@ -74,10 +74,10 @@ queueList = {
 logging = logging.getLogger()
 
 Dashboard = True
-Camera = False
-Semaphores = False
+Camera = True
+Semaphores = True
 TrafficCommunication = False
-SerialHandler = False
+SerialHandler = True
 
 # ------ New component flags starts here ------#
  
@@ -119,6 +119,11 @@ if TrafficCommunication:
 if SerialHandler:
     processSerialHandler = processSerialHandler(queueList, logging, debugging = False)
     allProcesses.append(processSerialHandler)
+
+# Initializing LaneKeeping
+if LaneKeeping:
+    processLaneKeeping = processLaneKeeping(queueList, logger, debugging=True)
+    allProcesses.append(processLaneKeeping)
 
 # ------ New component runs starts here ------#
  
