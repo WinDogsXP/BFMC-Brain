@@ -53,13 +53,13 @@ export class StateSwitchComponent {
   private minSpeed: number = -50;
 
   private steer: number = 0;
-  private steerIncrement: number = 5;
-  private steerDecrement: number = 5;
+  private steerIncrement: number = 10;
+  private steerDecrement: number = 10;
   private steerInterval: any;
   private steerDecreaseInterval: any;
   private isSteering: boolean = false;
-  private maxSteer: number = 25;
-  private minSteer: number = -25;
+  private maxSteer: number = 50;
+  private minSteer: number = -50;
 
   constructor(private  webSocketService: WebSocketService, 
     private clusterService: ClusterService
