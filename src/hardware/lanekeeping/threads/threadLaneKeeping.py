@@ -45,6 +45,7 @@ class threadLaneKeeping(ThreadWithStop):
             np_arr = np.frombuffer(frame_data, np.uint8)
             frame = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
             if frame is None:
+                logger.warning("mnmn")
                 continue
 
             steer_value, speed_value = self.do_lane_detection(frame)
